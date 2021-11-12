@@ -6,16 +6,17 @@ interface Props {
     name: string;
     likes: number;
   };
+  follow: () => void;
 }
 
-function FriendComponent({ data }: Props) {
+function FriendComponent({ data, follow }: Props) {
   return (
     <View style={{ marginBottom: 10 }}>
       <Text>
         {data.name} - Likes: {data.likes}
       </Text>
 
-      <TouchableOpacity>
+      <TouchableOpacity onPress={follow}>
         <Text>Deixar de seguir</Text>
       </TouchableOpacity>
     </View>
